@@ -11,7 +11,7 @@ public interface GeneroRepository extends JpaRepository<Genero, Long> {
 	
 	boolean existsByDescricaoIgnoreCase(String descricao);
 	
-	boolean existByIdNotAndDescricaoIgnoreCase(Long id, String descricao);
+	boolean existsByIdNotAndDescricaoIgnoreCase(Long id, String descricao);
 	
 
 }

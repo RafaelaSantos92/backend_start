@@ -3,6 +3,7 @@ package com.capgemini.start.domain.service;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class GeneroService extends AbstractService<Genero, Long> {
 	
+	@Autowired
 	private final GeneroRepository repository;
 	
 	@Override
@@ -45,7 +47,7 @@ public class GeneroService extends AbstractService<Genero, Long> {
 	
 	@Override
 	public Genero update(Genero genero) {
-		if (this.repository.existByIdNotAndDescricaoIgnoreCase(genero.getId(), genero.getDescricao())) {
+		if (this.repository.existsByIdNotAndDescricaoIgnoreCase(genero.getId(), genero.getDescricao())) {
 			throw new ObjectAlreadyExistsException("Já existe outro genero com essa descrição");
 		}
 		genero.setDataAlteracao(new Date());

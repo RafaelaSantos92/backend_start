@@ -27,13 +27,13 @@ public class Genero {
 	@Column(name = "id_genero", nullable = false)
 	private Long id;
 	
-	@Column(name = "ds_genero", nullable = false)
+	@Column(name = "ds_genero", nullable = false, length = 100)
 	private String descricao;
 	
 	@Column(name = "dt_inclusao", nullable = false)
 	private Date dataInclusao;
 	
-	@Column(name = "dt_alteracao", nullable = false)
+	@Column(name = "dt_alteracao")
 	private Date dataAlteracao;
 
 
